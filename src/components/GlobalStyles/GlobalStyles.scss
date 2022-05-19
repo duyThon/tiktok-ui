@@ -7,6 +7,15 @@
     --text-color: #333;
     --default-layout-header-height: 60px;
 }
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
 body {
     font-size: 1.6rem;
     line-height: 1.5;
