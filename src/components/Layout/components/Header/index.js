@@ -10,8 +10,10 @@ import styles from './Header.module.scss'
 import images from '~/assets/images';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItems from '~/components/AccountItems';
-import { faCircleQuestion, faCoins, faEarthAsia, faEllipsisVertical, faFileUpload, faGear, faKeyboard, faSignOut, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faCircleQuestion, faCoins, faEarthAsia, faEllipsisVertical, faGear, faKeyboard, faSignOut, faUser } from '@fortawesome/free-solid-svg-icons';
 import Menu from '~/components/Popper/Menu';
+import { UploadIcon } from '~/components/Icons';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -119,7 +121,7 @@ function Header() {
                         <>
                             <Tippy offset={[12, 8]} delay={[0, 200]} content="Upload Video" placement='bottom'>
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faFileUpload} />
+                                    <UploadIcon />
                                 </button>
                             </Tippy>
 
