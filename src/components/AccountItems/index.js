@@ -1,25 +1,26 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames";
+import { Link } from "react-router-dom";
 import styles from './AccountItems.module.scss';
 import Image from "../Image";
 
 const cx = classNames.bind(styles)
 
-function AccountItems() {
-    return <div className={cx("wrapper")}>
+function AccountItems(data) {
+    return <Link to={`/@${data.nickname}`} className={cx("wrapper")}>
         <Image
             className={cx('avatar')}
-            src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/ea0854578085ab26effc2c7b8cefa270~c5_300x300.webp?x-expires=1651489200&x-signature=Xp8iH14MDegegBpFEg%2Fg5rv6Mrw%3D"
-            alt="Hoaa"
+            src={data.avatar}
+            alt={data.avatar}
         />
         <div className={cx("info")}>
             <p className={cx("name")}>
-                <span>Nguyen Van A</span>
-                <FontAwesomeIcon className={cx("check")} icon={faCheckCircle} />
+                <span>{data.full_name}</span>
+                {data.tick && <FontAwesomeIcon className={cx("check")} icon={faCheckCircle} />}
             </p>
-            <span className={cx("username")}>nguyenvana</span>
+            <span className={cx("username")}>{data.nickname}</span>
         </div>
-    </div>
+    </Link>
 }
 
 export default AccountItems;
